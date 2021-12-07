@@ -8,7 +8,7 @@
               Price
           </th>
           <th>
-              Db
+              Quantity
           </th>
           <th>
               Operations
@@ -31,7 +31,7 @@
                   <input type="number" v-model="price" placeholder="Price">
               </td>
               <td>
-                  <input type="number" v-model="quantity" placeholder="Db">
+                  <input type="number" v-model="quantity" placeholder="Quantity">
               </td>
               <td>
                   <button @click="Post"> Add</button>

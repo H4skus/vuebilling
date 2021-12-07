@@ -1,4 +1,4 @@
-# [Név]
+# [Blényesi Ramirez Dániel]
 
 ## Hogyan kezdj neki?
 

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Raktári nyilván tartás"/>
+    <raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-post="Post" @raktar-item-delete="Delete"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+//import Vue from 'vue'
+import Raktar from './components/Raktar.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Raktar
   },
   data() {
     return {
@@ -37,10 +37,27 @@ export default {
         },
       ]
     }
-  }
+  },
+  methods:{
+      Changed(e) {
+      this.rows.map(function (row) {
+        if (row.title != e.original.title) {
+          return row
+        }
+        row.title = e.new.title
+        return row
+      })
+    },
+    Post(e){
+      this.rows.push(e.new)
+    },
+    Delete(e){
+        
+          this.rows.splice(this.rows.indexOf(e.original), 1);
+        }
+    }
 }
 </script>
-
 
 <style>
 #app {
